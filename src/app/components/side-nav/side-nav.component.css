@@ -1,0 +1,21 @@
+.side-nav{
+    height: 100vh;
+}
+
+@media (max-width : 768px) {
+    .side-nav{
+        height: fit-content;
+    }
+}
+
+ul li:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.active{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}

@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+.success-snackbar {
+    background-color: green;
+    color: white;
+    margin-bottom: 20px; /* Add margin bottom */
+    position: absolute;
+    bottom: 20px; /* Adjust the bottom position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+  }
+  
+  .custom-snackbar {
+    background-color: blue;
+    color: white;
+    margin-bottom: 20px; /* Add margin bottom */
+    position: absolute;
+    bottom: 20px; /* Adjust the bottom position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+  }

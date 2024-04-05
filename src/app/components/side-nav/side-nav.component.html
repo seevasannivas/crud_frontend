@@ -1,0 +1,11 @@
+<div class="container-fluid bg-dark text-white p-2 side-nav">
+    <div class="mt-5">
+        <ul class="list-unstyled p-3">
+            <li class="p-3 fs-4" [ngClass]="{'active' : current_url === '/addEmployee'}" (click)="onClick('/addEmployee')">Home</li>
+            <li class="p-3 fs-4" [ngClass]="{'active' : current_url === '/fetchEmployee'}" (click)="onClick('/fetchEmployee')">Reports</li>
+            <li class="p-3 fs-4" (click)="onClick('/task1')">Task1</li>
+            <li class="p-3 fs-4" (click)="onClick('/task2')">Task2</li>
+            <li class="p-3 fs-4" (click)="onClick('/')">Log Out</li>
+        </ul>
+    </div>
+</div>

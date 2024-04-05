@@ -1,0 +1,112 @@
+<!-- 
+<div class="container-sm mt-5">
+    <h2 class="text-center">Add Employee</h2>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="w-75 mx-auto border rounded-2 shadow p-5">
+        <div class="mb-3 mt-3 form-group">
+            <label for="name" class="form-label">Employee Name</label>
+            <input type="text" placeholder="employee name" class="form-control" formControlName="name">
+            <span class="text-danger" *ngIf="myForm.controls['name'].invalid &&(myForm.controls['name'].dirty || submitted)">Enter a valid employee name</span>
+        </div>
+        <div class="mb-3 mt-3 form-group">
+            <label for="age" class="form-label">Employee Age</label>
+            <input type="text" placeholder="employee age" class="form-control" formControlName="age">
+            <span class="text-danger" *ngIf="myForm.controls['age'].invalid &&(myForm.controls['age'].dirty || submitted)">Enter a valid employee age</span>
+        </div>
+        <div class="mb-3 mt-3 form-group">
+            <label for="role" class="form-label">Employee Role</label>
+            <input type="text" placeholder="employee role" class="form-control" formControlName="role">
+            <span class="text-danger" *ngIf="myForm.controls['role'].invalid &&(myForm.controls['role'].dirty || submitted)">Enter a valid employee role</span>
+        </div>
+        <div class="mb-3 mt-3 form-group">
+            <label for="email" class="form-label">Employee Email</label>
+            <input type="email" placeholder="employee email" class="form-control" formControlName="email">
+            <span class="text-danger" *ngIf="myForm.controls['email'].invalid &&(myForm.controls['email'].dirty || submitted)">Enter a valid employee email</span>
+        </div>
+        <div class="mb-3 mt-3 form-group">
+            <label for="phone" class="form-label">Employee Phone</label>
+            <input type="text" placeholder="employee phone" class="form-control" formControlName="mobile_no" maxlength="10" minlength="10">
+            <span class="text-danger" *ngIf="myForm.controls['mobile_no'].invalid &&(myForm.controls['mobile_no'].dirty || submitted)">Enter a valid employee phone</span>
+        </div>
+        <div class="mb-1 mt-4 text-center">
+            <button class="btn btn-success w-50 rounded-3">Submit</button>
+        </div>
+    </form>
+</div> -->
+<div class="text-end mt-2 p-2">
+    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#empModal">Employee +</button>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="empModal">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center"><h2>Add Employee</h2></h5>
+          <button type="button" id="btn" class="btn-close" data-bs-dismiss="modal">
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container-sm mt-2">
+                <!-- <h2 class="text-center">Add Employee</h2> -->
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mx-auto rounded-2 p-5">
+                    <div class="mb-3 mt-3 form-group">
+                        <label for="name" class="form-label">Employee Name</label>
+                        <input type="text" placeholder="employee name" class="form-control" formControlName="name">
+                        <span class="text-danger" *ngIf="myForm.controls['name'].invalid &&(myForm.controls['name'].dirty || submitted)">Enter a valid employee name</span>
+                    </div>
+                    <div class="mb-3 mt-3 form-group">
+                        <label for="age" class="form-label">Employee Age</label>
+                        <input type="text" placeholder="employee age" class="form-control" formControlName="age">
+                        <span class="text-danger" *ngIf="myForm.controls['age'].invalid &&(myForm.controls['age'].dirty || submitted)">Enter a valid employee age</span>
+                    </div>
+                    <div class="mb-3 mt-3 form-group">
+                        <label for="role" class="form-label">Employee Role</label>
+                        <input type="text" placeholder="employee role" class="form-control" formControlName="role">
+                        <span class="text-danger" *ngIf="myForm.controls['role'].invalid &&(myForm.controls['role'].dirty || submitted)">Enter a valid employee role</span>
+                    </div>
+                    <div class="mb-3 mt-3 form-group">
+                        <label for="email" class="form-label">Employee Email</label>
+                        <input type="email" placeholder="employee email" class="form-control" formControlName="email">
+                        <span class="text-danger" *ngIf="myForm.controls['email'].invalid &&(myForm.controls['email'].dirty || submitted)">Enter a valid employee email</span>
+                    </div>
+                    <div class="mb-3 mt-3 form-group">
+                        <label for="phone" class="form-label">Employee Phone</label>
+                        <input type="text" placeholder="employee phone" class="form-control" formControlName="mobile_no" maxlength="10" minlength="10">
+                        <span class="text-danger" *ngIf="myForm.controls['mobile_no'].invalid &&(myForm.controls['mobile_no'].dirty || submitted)">Enter a valid employee phone</span>
+                    </div>
+                    <div class="mb-1 mt-4 text-center">
+                        <button class="btn btn-success w-50 rounded-3" data-bs-dismiss="modal">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-2 table-responsive">
+    <table class="table table-bordered table-hover table-striped rounded-3">
+        <thead class="table-dark">
+            <tr>
+                <th>S.no</th>
+                <th>Employee Name</th>
+                <th>Employee Age</th>
+                <th>Employee Role</th>
+                <th>Employee Email</th>
+                <th>Employee Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let emp of employee_details;let i=index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.age}}</td>
+                <td>{{emp.role}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.mobile_no}}</td>
+                <td><button class="btn btn-warning me-2" (click)="edit(emp)" data-bs-toggle="modal" data-bs-target="#empModal">Edit</button><button class="btn btn-danger" (click)="delete(emp)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+  </div>

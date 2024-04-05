@@ -1,0 +1,5 @@
+<div class="container mt-5 d-flex justify-content-center">
+   <google-map width="600px" height="600px" [zoom]="zoom" [center]="center" (mapClick)="addMarker($event)">
+    <map-marker [position]="marker_positions" [options]="marker_options"></map-marker>
+   </google-map>
+</div>
